@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GrossetApp.CittàPage"
+             Title="Città">
+    <Grid RowDefinitions="100, *">
+        <Grid Grid.Row="0" 
+              BackgroundColor="#EEEEEE" 
+              Padding="10">
+
+            <Image 
+                   Source="stemma_grosseto.jpg"
+                   Opacity="0.6"/>
+            </Grid>
+
+        <CollectionView Grid.Row="1"
+                     x:Name="collectionCityView"
+                     ItemsSource="{Binding City}"
+                     BackgroundColor="#F5F5F5"
+                     Margin="10">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame BorderColor="#CCCCCC"
+                           CornerRadius="10"
+                           Margin="10"
+                           Padding="10">
+                        <StackLayout Margin="20">
+                            <Label Text="Localizzazione:"
+                                   FontSize="Medium" 
+                                   FontAttributes="Bold"
+                                   Padding="0, 10, 0, 0"/>
+                                <Label Text="{Binding Stato, StringFormat='Stato: {0}'}" 
+                                       FontSize="Medium"/>
+                                <Label Text="{Binding Regione, StringFormat='Regione: {0}'}" 
+                                       FontSize="Medium"/>
+                                <Label Text="{Binding Provincia, StringFormat='Provincia: {0}'}" 
+                                       FontSize="Medium"/>
+
+                            <Label Text="Amministrazione:"
+                                   FontSize="Medium" 
+                                   FontAttributes="Bold"
+                                   Padding="0, 10, 0, 0"/>
+                                <Label Text="{Binding Sindaco, StringFormat='Sindaco: {0}'}" 
+                                        FontSize="Medium"/>
+
+                            <Label Text="Territorio:"
+                                   FontSize="Medium" 
+                                   FontAttributes="Bold"
+                                   Padding="0, 10, 0, 0"/>
+                                <Label Text="{Binding Altitudine, StringFormat='Altitudine: {0}'}" 
+                                        FontSize="Medium"/>
+                                <Label Text="{Binding Superficie, StringFormat='Superficie: {0}'}" 
+                                        FontSize="Medium"/>
+                                <Label Text="{Binding Abitanti, StringFormat='Abitanti: {0}'}" 
+                                        FontSize="Medium"/>
+                                <Label Text="{Binding Densità, StringFormat='Densità: {0}'}" 
+                                        FontSize="Medium"/>
+
+                        </StackLayout>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </Grid>
+</ContentPage>

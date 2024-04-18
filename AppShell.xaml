@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="GrossetApp.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:GrossetApp"
+    Title="GrossetApp">
+
+
+    <Shell.FlyoutHeader>
+        <ContentView HeightRequest="200">
+            <Grid BackgroundColor="Red">
+                <Image Aspect="AspectFill"
+                       Source="grosseto_pic.jpg"
+                       Opacity="0.6"/>
+                <Label Text="GrossetApp"
+                       TextColor="White"
+                       FontAttributes="Bold"
+                       FontSize="Title"
+                       HorizontalTextAlignment="Center"
+                       VerticalTextAlignment="Center"/>
+            </Grid>
+        </ContentView>
+    </Shell.FlyoutHeader>
+
+    <ShellContent Title="Città"
+                  ContentTemplate="{DataTemplate local:CittàPage}" />
+
+    <ShellContent Title="Meteo"
+                  ContentTemplate="{DataTemplate local:MeteoPage}" />
+
+    <Shell.FlyoutFooter>
+        <ContentView HeightRequest="100">
+            <Grid BackgroundColor="Green">
+                <Label Text="Made by Alfredo"
+                       TextColor="White"
+                       FontAttributes="Bold"
+                       HorizontalTextAlignment="Center"
+                       VerticalTextAlignment="Center"/>
+            </Grid>
+        </ContentView>
+    </Shell.FlyoutFooter>
+</Shell>
